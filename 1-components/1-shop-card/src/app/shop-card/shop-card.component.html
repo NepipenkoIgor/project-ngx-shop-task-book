@@ -1,35 +1,39 @@
 <div class="product-list-box -basket">
   <div class="inner-col description-col">
     <div class="product-img">
-      <img/>
+<!--      <img [src]="product.image" [alt]="product.name"/>-->
+      <img [attr.src]="product?.image"  [attr.alt]="product?.name"/>
+<!--      <img src="{{image}}"  alt="{{name}}"/>-->
+<!--      <img [attr.src]="image"  [attr.alt]="name"/>-->
     </div>
     <div class="product-desc">
-      <h4 class="col-title mb-2"></h4>
+      <h4 class="col-title mb-2">{{product?.name}}</h4>
       <div class="rate">
-        <span class="rate-amount ml-2 d-inline-block d-md-none"> отзывов</span>
+        <span class="rate-amount ml-2 d-inline-block d-md-none"> {{product?.feedbacksCount}}  отзывов</span>
       </div>
       <p class="rate-amount d-none d-md-block mt-1">
-        отзывов
+        {{product?.feedbacksCount}}  отзывов
       </p>
       <p class="price-text mb-0 mt-2 d-inline-block d-md-none">
-        <strong>€</strong>
+        <strong>€{{product?.price}}</strong>
       </p>
     </div>
   </div>
   <div class="default-col inner-col flex-col justify-content-center">
     <div class="counter">
-      <button type="button" class="decrement">
+      <button type="button" class="decrement" (click)="decrementProductInCart()">
         <img src="assets/icons/icon-minus-circle-outlined.svg" alt="minus"/>
       </button>
-      <span class="counter__value"></span>
-      <button type="button" class="increment">
+      <span class="counter__value">{{product?.count}}</span>
+      <button type="button" class="increment" (click)="incrementProductInCart()">
         <img src="assets/icons/icon-plus-circle-outlined.svg" alt="plus"/>
       </button>
     </div>
   </div>
   <div class="default-col inner-col flex-col justify-content-center">
     <div class="price">
-      <h4 class="mb-0">€</h4>
+      <h4 class="mb-0">€{{product?.count*product?.price}}</h4>
     </div>
   </div>
 </div>
+
