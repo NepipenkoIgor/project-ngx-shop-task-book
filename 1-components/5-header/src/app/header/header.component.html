@@ -4,13 +4,13 @@
       <div>
         <a class="navbar-brand" ><strong>NgShop</strong></a>
       </div>
-      <a class="basket basket_not-empty pointer">
+      <a class="basket basket_not-empty pointer" (click)="redirectTo()">
         <img
           loading="auto"
           src="assets/icons/icon-basket.svg"
           alt="menu icon"
         />
-        <span class="product-counter"></span>
+        <span class="product-counter">{{counter}}</span>
       </a>
     </div>
   </nav>
