@@ -1,33 +1,34 @@
 <div class="product-list-box">
-  <div  class="inner-col description-col go-to-product">
+  <div  class="inner-col description-col go-to-product" (click)="redirectTo()">
     <div class="product-img pointer">
-      <img
+      <img [src]='product?.image'   [alt]="product?.name"
         loading="auto"
         class="img"
         width="80"
       />
+
     </div>
 
     <div class="product-desc">
       <h4 class="product-name col-title mb-2 pointer">
-
+{{product.name}}
       </h4>
-      <p class="rate-amount d-none d-md-block mt-1">
+      <p class="rate-amount d-none d-md-block mt-1">{{product.feedbacksCount}}
        отзыва
       </p>
 
       <p class="price-text mb-0 mt-2 d-inline-block d-md-none">
-        <strong>€ </strong>
+        <strong>{{product.price}}€</strong>
       </p>
     </div>
   </div>
 
   <div class="default-col inner-col price-col actions">
-    <h4 class="col-title price-text mb-2">€</h4>
+    <h4 class="col-title price-text mb-2">{{product.price}}€</h4>
     <div class="button-wrap">
       <button
         type="button"
-        class="btn btn-outline-primary add-to-cart"
+        class="btn btn-outline-primary add-to-cart" (click)="addToBasket()"
       >
         Добавить в корзину
       </button>

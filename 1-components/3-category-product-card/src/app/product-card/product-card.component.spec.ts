@@ -69,7 +69,7 @@ describe('[Moдуль 1 - Компонент товара]', () => {
     } = (component as any)?.product;
     expect(imgEl.attributes.src).toEqual(image);
     expect(imgEl.attributes.alt).toEqual(name);
-  });
+  })
 
   it('тег с селектором .product-desc .product-name  должен правильно интерполировать свойство name продукта', () => {
     (component as any).product = oneProduct;
