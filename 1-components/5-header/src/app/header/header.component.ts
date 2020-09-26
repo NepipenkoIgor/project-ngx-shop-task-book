@@ -12,5 +12,6 @@ public counter = 5;
 
 public redirectTo(){
 this.goToBasket.emit();
+console.log(this.goToBasket.emit(console.log(this)));
 }
 }
